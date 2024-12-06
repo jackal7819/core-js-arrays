@@ -20,8 +20,11 @@
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  if (start > end) {
+    throw new Error('Start is greater than end');
+  }
+  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
 }
 
 /**
